@@ -1,124 +1,69 @@
-# Python
+# Tuples
 
-**Python for Data Science Master Course** 💻
+ - Similar to list (read only)
+ - Ordered collection of items
+ - Indexable
+ - Immutable
 
-https://github.com/coding-minutes/python-data-science-mastercourse
+   **Tuples are faster than list**
+   Use to store sensitive data that cannot be changed. Eg - Employe Salary, value of pi constant etc
 
-## To find sqaure
-**Use ** **
- ex- x**2
+## Tuple creation
 
-**Square Root**
-
- x = x**0.5
-
-
- # Loop
-
- ## Example 1: Loop through a list
- for item in sequence:
-  fruits = ["apple", "banana", "cherry"]
-for fruit in fruits:
-    print(fruit)
-
- ## Example 2: Using range() to loop over numbers
- for i in range(5):
-    print(i)
-## Example 3: Loop with start, stop, step
-for i in range(2, 10, 2):  # from 2 to 9, step by 2
-    print(i)
-## Nested for loop
-for i in range(3):         # Outer loop
-    for j in range(2):     # Inner loop
-        print(f"i={i}, j={j}")
-
-## for-else in Python
-The **else** block runs only if the loop completes without a break.
-
-Example: Check if a number is prime
-
-    ```
-n = 7
-for i in range(2, int(n**0.5) + 1):
-    if n % i == 0:
-        print("Not prime")
-        break
-else:
-    print("Prime")
-    ```
-
-## while-else :
-The else block runs only if the loop ends naturally (not by break).
-
-# String
-
-Negative indexing
-In other language we access last character by writing len(str) -1. But Python supports negative indexing as well.
-str[-1] will automatically return last character
-str[-2] will return 2nd last character.
-
-## String slicing
-str[start_idx: end_idx+1]
-
-**To access all characters except last two characters**
-str[:-2]
-
-** For concatenation use **+** **
-
-## Multiplication
-
-# Multiplication of string with int n results into repitation string n times.
-ex- "hello"*4
-
-## Palindrom exapmle
+**Use () to declare **
 ```
-def is_clean_palindrome(s):
-    cleaned = s.replace(" ", "").lower()
-    return cleaned == cleaned[::-1]
+tup = (8, 9, "Hello", 88)
+print(tup) // (8, 9, Hello, 88)
+type(tup) // tuple
+print( tup[0] ) // 8
+print( tup[:-1] ) //print all except last
 ```
 
-**my way **
-```
-x  = int(len(s) / 2)
+# Set
+  - Contains only unique elements
+  - Mutable
+  - Unordered
+  - Unindexable
 
-isPalindrome = True
+    **Use {} to declare the set**
+    Available methods **add()** and **remove()**
 
-for i in range(x):
-   if s[i] != s[-(i+1)]:
-       isPalindrome = False
-       break
+    **Constructor**
+    set()
+    my_list = [1, 2,1,3]
+    my_set = Set(my_list)
+
+# Dictionay
+ - Store data in key-value pair (Tabular data)
+ - Unordered
+ - unindexable
+ - access the value with the help of key
+
+   **Use {:} to declare**
+
+   ```
+   Access using dic['name'] # returns error if key not found
+
+   use **dic.get()** tp avoid errors
    
-print(isPalindrome)
-```
-## Count number of vowels
-  
-  ```
-    def count_vowels(s):
-       return sum(1 for char in s if char in "aeiouAEIOU")
-  ```
-1 for char in s if char in "aeiouAEIOU":
+    value = dict.get("apple")         # returns value or None if key not found
+   ```
 
-This is a generator expression (a compact form of a loop) that produces a 1 for each character that is a vowel.
+   **Default Value Handling**
+   ```
+   value = dict.get("orange", 0)     # default to 0
+   ````
+    **To display key values combined in a pair.**
+   ```
+   dic.items()  # returns (key, value) pair in tuple
+   
+   for k,v in dic.items():
+       print(k, " : ", v)
+   ```
 
-For example, if s = "Hello", the generator will yield 1 for the vowel 'e' and 'o'.
+   **To delete key, value**
+   ```
+   dic.pop('name') # return deleted values as well if you want to store you can
+   ``` 
 
-**sum(...):**
-
-sum() calculates the total of all the 1s produced by the generator expression.
-
-# List
-Can storeheterogenous elements.
-## List Functions
-my_list.sort() -> ascemding order
-my_list.sort(reverse=True) -> Descending order
-
-# Find element in list
-Use in operator (Work with string and kist both)
-ex- 99 in my_list
-
-# List Comprehension
-
-
-
-
-
+   
