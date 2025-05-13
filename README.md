@@ -113,11 +113,62 @@ my_list.sort() -> ascemding order
 my_list.sort(reverse=True) -> Descending order
 
 # Find element in list
-Use in operator (Work with string and kist both)
+Use **in** and **not in** operator (Work with string and list both)
 ex- 99 in my_list
 
 # List Comprehension
 
+**Basic Syntax**
+[expression for item in iterable]
+
+**With Condition:**
+[expression for item in iterable if condition]
+
+```
+squares = [x * x for x in range(10) if x % 2 == 0]
+```
+
+# List Operation
+
+```lst1 = [2, 3, 4, 5]
+lst2 = [1, 2, 3, 4, 5]
+```
+
+✅ 1. Find elements in lst2 but not in lst1:
+diff = [x for x in lst2 if x not in lst1]
+print(diff)  # Output: [1]
+
+✅ 2. Find common elements:
+common = [x for x in lst1 if x in lst2]
+print(common)  # Output: [2, 3, 4, 5]
+
+ ✅ 3. Union (without duplicates):
+ union = list(set(lst1 + lst2))
+print(union)  # Output: [1, 2, 3, 4, 5]
+
+✅ 4. Check if lst1 is a subset of lst2:
+is_subset = all(x in lst2 for x in lst1)
+print(is_subset)  # Output: True
+
+## List Concatenation (+)
+
+ **Explanation:**
+The + operator concatenates the two lists.
+
+- It does not remove duplicates.
+
+- It creates a new list containing the elements of both. The order is preserved: first lst1, then lst2.
+- It does not modify the original lists.
+
+
+```
+result = list1 + list2
+print(result)  # Output: [2, 3, 4, 5, 1, 2, 3, 4, 5]
+```
+
+
+
+ 
 
 
 
