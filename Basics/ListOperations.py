@@ -33,3 +33,7 @@ print( list_2d[1][-1])
 my_list.sort()
 print("My list after sorting: ", my_list)
 print("Second Largest element: ", my_list[1])
+
+
+lst = ['apple', 'orange', 'grapes', 'kiwi']
+print( list( map(len, lst) ) )
