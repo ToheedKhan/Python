@@ -52,7 +52,58 @@ The else block runs only if the loop ends naturally (not by break).
 
 # String
 
-Negative indexing
+## Multiline string
+In Python, """ """ (triple double quotes) or ''' ''' (triple single quotes) are used for **multiline strings or docstrings**.
+```
+message = """This is a
+multiline string in Python.
+It spans several lines."""
+print(message)
+```
+
+ **Docstring (Documentation String)**
+Docstrings describe what a module, class, or function does.
+```
+def greet():
+    """This function prints a greeting message."""
+    print("Hello!")
+
+print(greet.__doc__)  # Accessing the docstring
+
+```
+✅ **Notes**:
+You can use ''' or """ — both are functionally the same.
+
+Docstrings are usually written using """ """ by convention.
+
+They're accessible using the .__doc__ attribute.
+
+**Formating**
+Using `str.format()` — an older string formatting method in Python.
+```
+print("{} is already dead".format(self.name)) 
+```
+**Python 3.6**
+The `f in print(f"...")` stands for f-string, short for **formatted string literal**
+
+```
+name = "Alice"
+age = 30
+print(f"My name is {name} and I am {age} years old.")
+
+```
+📌 Benefits of f-strings:
+Cleaner and more readable than using + or format()
+
+Can include expressions too:
+```
+print(f"Next year I will be {age + 1} years old.")
+```
+
+✅ What It Does:
+It allows you to embed variables directly inside a string using {}.
+
+**Negative indexing**
 In other language we access last character by writing len(str) -1. But Python supports negative indexing as well.
 str[-1] will automatically return last character
 str[-2] will return 2nd last character.
