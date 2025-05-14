@@ -52,6 +52,32 @@ The else block runs only if the loop ends naturally (not by break).
 
 # String
 
+## Multiline string
+In Python, """ """ (triple double quotes) or ''' ''' (triple single quotes) are used for **multiline strings or docstrings**.
+```
+message = """This is a
+multiline string in Python.
+It spans several lines."""
+print(message)
+```
+
+ **Docstring (Documentation String)**
+Docstrings describe what a module, class, or function does.
+```
+def greet():
+    """This function prints a greeting message."""
+    print("Hello!")
+
+print(greet.__doc__)  # Accessing the docstring
+
+```
+✅ **Notes**:
+You can use ''' or """ — both are functionally the same.
+
+Docstrings are usually written using """ """ by convention.
+
+They're accessible using the .__doc__ attribute.
+
 **Formating**
 Using `str.format()` — an older string formatting method in Python.
 ```
