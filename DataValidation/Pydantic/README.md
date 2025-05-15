@@ -44,3 +44,9 @@ Validating API input (e.g., with FastAPI).
 Config management (with BaseSettings).
 
 Data transformation (parse JSON into Python objects).
+
+
+# Doc
+https://realpython.com/python-pydantic/
+
+
