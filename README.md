@@ -217,9 +217,17 @@ result = list1 + list2
 print(result)  # Output: [2, 3, 4, 5, 1, 2, 3, 4, 5]
 ```
 
+# Duck typing
+In Python, duxk typing is a programming concept where an object’s behavior is more important than its actual type.
+🦆 **Definition**
+"If it walks like a duck and quacks like a duck, it’s a duck."
 
+In Python, you don’t check if an object is of a specific class — you just check if it has the methods/attributes you need.
 
- 
+# Why It Matters
+Encourages flexible and loosely-coupled code.
+
+Python emphasizes behavior over type, which is great for polymorphism.
 
 
 
