@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, timedelta
 from uuid import UUID, uuid4
 from enum import Enum
 from pydantic import BaseModel, EmailStr, Field, field_validator
@@ -28,3 +28,13 @@ class Employee(BaseModel):
             raise ValueError("Employees must be at least 18 years old.")
 
         return date_of_birth
+    
+
+    young_employee_data = {
+     "name": "Jake Bar",
+     "email": "jbar@example.com",
+    "birth_date": date.today() - timedelta(days=365 * 17),
+     "compensation": 90_000,
+     "department": "SALES",
+     "elected_benefits": True,
+ }

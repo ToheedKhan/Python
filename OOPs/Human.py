@@ -52,7 +52,7 @@ class Hitman(Human):
 
     def kill(self, person):
         """Person will be an obj of Human class"""
-        
+
         if self.is_alive:
             print(f"{self.name} killed {person.name}")
             self.kills += 1
@@ -60,6 +60,12 @@ class Hitman(Human):
             person.die()
         else:
             print(f"{self.name} is dead and cannot kill anyone.")
+
+# Function overriding
+    def instroduce(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+        print("I am a hitman.")
+        print(f"I have killed {self.kills} people.")
     
 h1 = Human("John", 25)
 h1.instroduce()
