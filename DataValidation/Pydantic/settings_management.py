@@ -14,6 +14,8 @@ class AppConfig(BaseSettings):
     database_password: str = Field(min_length=10)
     api_key: str = Field(min_length=20)
 
-print(AppConfig.model_config.keys())
 print(AppConfig().database_host)
+
+appConfig = AppConfig()
 # print(AppConfig().model_dump())
+
