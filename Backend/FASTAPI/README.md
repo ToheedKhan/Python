@@ -96,3 +96,46 @@ REST recommends certain architectural constraints.
 
 - Visibility
 ```
+# Path Parameters with Types
+You can use Pythons type hints for the parameters of the function to be decorated. In this case, define name as str and age as int.
+```
+@app.get("/hello/{name}/{age}")
+async def hello(name:str,age:int):
+   return {"name": name, "age":age}
+```
+
+## Validations
+```
+app = FastAPI()
+@app.get("/hello/{name}")
+async def hello(name:str=Path(...,min_length=3,
+max_length=10)):
+   return {"name": name}
+```
+
+Validation rules can be applied on numeric parameters too, using the operators as given below −
+```
+gt − greater than
+
+ge − greater than or equal
+
+lt − less than
+
+le − less than or equal
+```
+
+
+## Option 1: Find and Kill the Process Using Port 8000
+Run this in the terminal:
+
+``
+lsof -i :8000
+```
+## Option 2: Use a Different Port
+
+**Now kill that process:**
+```
+kill -9 12345
+```
+
+
