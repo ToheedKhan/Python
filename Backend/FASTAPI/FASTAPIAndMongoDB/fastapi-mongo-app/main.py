@@ -19,10 +19,17 @@ async def read_item(request: Request):
     # docs = conn.notes.notes.find_one({})
     # print(docs)
     docs = conn.notes.notes.find({})
+    newDocs = []
     for doc in docs:
         print(doc)
+        newDocs.append({
+            "id": doc["_id"],
+            "note": doc["note"],
+        })
     return templates.TemplateResponse(
-        request=request, name="index.html", context={"id": id}
-    )
+            "index.html", {"request": request, "newDocs": newDocs}
+        )
+  
 
 #("item.html", {"request": request, "id": id})
+
