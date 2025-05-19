@@ -1,98 +1,44 @@
-FastAPI is a modern Python web framework, very efficient in building APIs. It is based on Pythons type hints feature that has been added since Python 3.6 onwards. It is one of the fastest web frameworks of Python.
+Try Atlas: https://www.mongodb.com/cloud/atlas/r...
+FastAPI with MongoDB: https://www.mongodb.com/developer/tec...
+MongoDB Learning Resources: https://learn.mongodb.com/?utm_campai...
 
-As it works on the functionality of **Starlette** and **Pydantic** libraries, its performance is amongst the best and on par with that of NodeJS and Go.
+## To make User interface quickly - 
+Bootstrape
 
-FastAPI doesnt come with any built-in server application. To run FastAPI app, you need an **ASGI** server called **uvicorn**.
+Jinja2 templates
 
-The first step in creating a FastAPI app is to declare the application object of FastAPI class.
-```
-from fastapi import FastAPI
-app = FastAPI()
-```
-This app object is the main point of interaction of the application with the client browser. The uvicorn server uses this object to listen to clients request.
+http://127.0.0.1:800://127.0.0.1:8000/docs
 
-# Documentation
-FastAPI generates a schema using **OpenAPI** specifications.
+Run server
+uvicorn main:app --reload
 
-FastAPI uses **Swagger UI** to produce documentation.
 
-<mark>
-http://127.0.0.1:8000/docs</mark>
+ What is Jinja2?
+Jinja2 is a templating engine for Python — it's used to generate dynamic HTML (or other text files) by mixing Python-like code with static content.
 
-<mark>http://localhost:8000/docs
-</mark>
+✅ Common Use Case:
+Jinja2 is most commonly used in web frameworks like:
 
-FastAPI also supports another automatic documentation method provided by **Redoc** ( https://github.com/Redocly/redoc).
+Flask
 
-Enter http://localhost:8000/redoc as URL in the browsers address bar.
+Django (Django uses its own template engine but is very similar)
 
-**No built-in development server**. Hence we need Uvicorn. It implements **ASGI** standards and is lightning fast. ASGI stands for **Asynchronous Server Gateway Interface.**
+FastAPI (when rendering HTML)
 
-**Uvicorn** uses **uvloop** and **httptools** libraries.
 
-```
-uvicorn main:app reload
-```
-The **--reload** option enables the debug mode so that any changes in app.pywill be automatically reflected and the display on the client browser will be automatically refreshed.
+# Step 1: Activate your environment
+source venv/bin/activate   # macOS/Linux
+venv\Scripts\activate.bat  # Windows
 
-Instead of starting Uvicorn server from command line, it can be launched programmatically also.
+# Step 2: Run your project / use installed packages
+python main.py
 
-Example
-In the Python code, call uvicorn.run() method, using any of the parameters listed above −
-```
-import uvicorn
-from fastapi import FastAPI
-app = FastAPI()
-@app.get("/")
-async def index():
-   return {"message": "Hello World"}
-if __name__ == "__main__":
-   uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
-```
-**Uvicorn server will thus be launched in debug mode.**
+# Step 3: Done? Deactivate it
+deactivate
 
-## FastAPI - Type Hints
-FastAPI makes extensive use of the Type hinting feature made available in Pythons version 3.5 onwards.
 
-Pythons new type hinting feature helps in prompting the user with the expected type of the parameters to be passed. This is done by adding a colon and data type after the parameter.
-If incompatible values are passed to the function, or returned by the function, Python reports TypeError. Use of **MyPy** static type checker can detect such errors. Install mypy package first.
+To create an __init__.py file in a folder (so Python treats it as a package), follow one of these simple methods:
+Why Is This Needed?
+It tells Python the directory is a package.
 
-```
-pip3 install mypy
-```
-
-## REST Architecture
-
-**RElational State Transfer (REST)** is a software architectural style. REST defines how the architecture of a web application should behave. It is a resource based architecture where everything that the REST server hosts, (a file, an image, or a row in a table of a database), is a resource, having many representations.
-
-REST recommends certain architectural constraints.
-
-```
-- Uniform interface
-
-- Statelessness
-
-- Client-server
-
-- Cacheability
-
-- Layered system
-
-- Code on demand
-  ```
-
-`REST` <mark>'constraints'</mark> has the following advantages −
-
-```
-- Scalability
-
-- Simplicity
-
-- Modifiability
-
-- Reliability
-
-- Portability
-
-- Visibility
-```
+Without it, you may get import errors like ModuleNotFoundError.
